@@ -7,8 +7,8 @@ const int ledPin = 12;
 
 
 // Static values
-const int startVal = 1000;
-const int endVal = 5;
+const int startVal = 5;
+const int endVal = 1000;
 const int stepVal = 50;
 
 void setup() {
@@ -16,13 +16,13 @@ void setup() {
 }
 
 void loop() {
-  int time = 1000;
-  while (time > endVal){
+  int time = startVal;
+  while (time < endVal){
     digitalWrite(ledPin, HIGH);
     delay(time);
     digitalWrite(ledPin, LOW);
     delay(time);
-    time -= stepVal;
+    time += stepVal;
   }
   
 }
